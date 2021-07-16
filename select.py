@@ -1,10 +1,12 @@
 import pyodbc
 
 try:
-    conn_str =r'Driver={Microsoft Access Driver (*.mdb)};DBQ=E:\GrandSchedule_Coding\GrandSchedule\GrandSchedule.mdb;' #สำหรับ msaccess 32bit + python 32bit
+    #conn_str =r'Driver={Microsoft Access Driver (*.mdb)};DBQ=E:\GrandSchedule_Coding\GrandSchedule\GrandSchedule.mdb;' #สำหรับ msaccess 32bit + python 32bit
+    conn_str =r'Driver={Microsoft Access Driver (*.mdb)};DBQ=C:\Users\Administrator\Desktop\22att2000\22att2000.mdb;' #สำหรับ msaccess 32bit + python 32bit
     conn= pyodbc.connect(conn_str)
     crsr= conn.cursor()
-    crsr.execute('select * from tblDay where day_id = 2')
+    userid=106
+    crsr.execute('select * from abk_userinfo where userid = ?',userid)
     rows = crsr.fetchall()
     for row in rows:
         print(row)
@@ -14,4 +16,4 @@ try:
 
 except pyodbc.Error as e:
     myerr="hi error"
-    print(f"error {myerr}")
+    print(f"error {myerr} : ",e)

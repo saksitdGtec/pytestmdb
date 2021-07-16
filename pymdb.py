@@ -1,4 +1,9 @@
+
+# https://github.com/mkleehammer/pyodbc/wiki/Connecting-to-Microsoft-Access
+
+
 import pyodbc
+
 
 conn = pyodbc.connect(r'Driver={Microsoft Access Driver (*.mdb)};DBQ=E:\GrandSchedule_Coding\GrandSchedule\GrandSchedule.mdb;') #สำหรับ msaccess 32bit + python 32bit
 
