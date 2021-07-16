@@ -1,1 +1,2 @@
 # pytestmdb
+* ทดสอบ pyodbc
